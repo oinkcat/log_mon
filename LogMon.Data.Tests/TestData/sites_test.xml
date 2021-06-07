@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appcmd>
+    <SITE SITE.NAME="OLD_VZA" SITE.ID="1" bindings="http/*:80:old.gppc.ru" state="Stopped" />
+    <SITE SITE.NAME="OLD_Service" SITE.ID="2" bindings="http/[::1]:8080:" state="Stopped" />
+    <SITE SITE.NAME="TEST" SITE.ID="3" bindings="http/*:80:test.gppc.ru" state="Stopped" />
+    <SITE SITE.NAME="gppc-proxy" SITE.ID="4" bindings="http/*:80:gppc.ru" state="Started" />
+    <SITE SITE.NAME="www.gppc-proxy" SITE.ID="5" bindings="http/*:80:www.gppc.ru" state="Started" />
+    <SITE SITE.NAME="AIS" SITE.ID="8" bindings="http/*:80:my.gppc.ru,https/*:443:my.gppc.ru" state="Started" />
+    <SITE SITE.NAME="Exporter" SITE.ID="6" bindings="http/*:5500:" state="Started" />
+    <SITE SITE.NAME="DiagPlatform" SITE.ID="7" bindings="http/*:80:diagnostic.gppc.ru,https/*:443:diagnostic.gppc.ru" state="Started" />
+    <SITE SITE.NAME="Searcher" SITE.ID="9" bindings="http/*:5501:" state="Started" />
+    <SITE SITE.NAME="Enrolls" SITE.ID="10" bindings="http/*:80:enroll.gppc.ru" state="Started" />
+    <SITE SITE.NAME="UpdateService" SITE.ID="11" bindings="http/[::1]:80:,http/*:80:service.gppc.ru" state="Started" />
+</appcmd>

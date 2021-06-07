@@ -1,0 +1,100 @@
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2021-05-15 01:45:29
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2021-05-15 01:45:29 10.7.10.3 GET / - 80 - 10.7.10.13 Mozilla/5.0+(Linux;+Android+11;+SM-G970F)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.91+Mobile+Safari/537.36 - 200 0 0 1020
+2021-05-15 01:45:29 10.7.10.3 GET /Content/enroll.css - 80 - 10.7.10.13 Mozilla/5.0+(Linux;+Android+11;+SM-G970F)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.91+Mobile+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 7
+2021-05-15 01:45:29 10.7.10.3 GET /bundles/enroll_public v=OqtA6kLUsle6PYnUWYKRgG-FljtQ5eDp7dL83yP_-Vc1 80 - 10.7.10.13 Mozilla/5.0+(Linux;+Android+11;+SM-G970F)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.91+Mobile+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 4
+2021-05-15 01:45:29 10.7.10.3 GET /bundles/jquery v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1 80 - 10.7.10.13 Mozilla/5.0+(Linux;+Android+11;+SM-G970F)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.91+Mobile+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 6
+2021-05-15 01:45:29 10.7.10.3 GET /Content/front.css - 80 - 10.7.10.13 Mozilla/5.0+(Linux;+Android+11;+SM-G970F)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.91+Mobile+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 18
+2021-05-15 01:45:29 10.7.10.3 GET /Content/loader-big.gif - 80 - 10.7.10.13 Mozilla/5.0+(Linux;+Android+11;+SM-G970F)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.91+Mobile+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 26
+2021-05-15 01:45:29 10.7.10.3 GET /Content/bootstrap.css - 80 - 10.7.10.13 Mozilla/5.0+(Linux;+Android+11;+SM-G970F)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.91+Mobile+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 36
+2021-05-15 01:45:35 10.7.10.3 GET /Content/images/back.png - 80 - 10.7.10.13 Mozilla/5.0+(Linux;+Android+11;+SM-G970F)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.91+Mobile+Safari/537.36 https://enroll.gppc.ru/Content/front.css 200 0 0 20
+2021-05-15 01:45:35 10.7.10.3 GET /Content/back/enroll.jpg - 80 - 10.7.10.13 Mozilla/5.0+(Linux;+Android+11;+SM-G970F)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.91+Mobile+Safari/537.36 https://enroll.gppc.ru/Content/enroll.css 200 0 0 24
+2021-05-15 01:45:38 10.7.10.3 GET /api/Data/GetAddresses - 80 - 10.7.10.13 Mozilla/5.0+(Linux;+Android+11;+SM-G970F)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.91+Mobile+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 2238
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2021-05-15 02:03:17
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2021-05-15 02:03:17 10.7.10.3 GET / - 80 - 10.7.10.13 Expanse,+a+Palo+Alto+Networks+company,+searches+across+the+global+IPv4+space+multiple+times+per+day+to+identify+customers&#39;+presences+on+the+Internet.+If+you+would+like+to+be+excluded+from+our+scans,+please+send+IP+addresses/domains+to:+scaninfo@paloaltonetworks.com - 200 0 0 5
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2021-05-15 02:35:04
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2021-05-15 02:35:04 10.7.10.3 GET /robots.txt - 80 - 10.7.10.13 CCBot/2.0+(https://commoncrawl.org/faq/) - 404 0 2 47
+2021-05-15 02:35:05 10.7.10.3 GET / - 80 - 10.7.10.13 CCBot/2.0+(https://commoncrawl.org/faq/) - 200 0 0 1213
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2021-05-15 04:05:04
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2021-05-15 04:05:04 10.7.10.3 GET / - 80 - 10.7.10.13 Mozilla/5.0+(compatible;+bingbot/2.0;++http://www.bing.com/bingbot.htm) - 200 0 0 1017
+2021-05-15 04:15:23 10.7.10.3 GET /robots.txt - 80 - 10.7.10.13 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots) - 404 0 2 2
+2021-05-15 04:15:25 10.7.10.3 GET / - 80 - 10.7.10.13 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/81.0.4044.268 - 200 0 0 7
+2021-05-15 04:15:30 10.7.10.3 GET /Content/enroll.css - 80 - 10.7.10.13 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/81.0.4044.268 https://enroll.gppc.ru/ 200 0 0 24
+2021-05-15 04:15:34 10.7.10.3 GET /Content/bootstrap.css - 80 - 10.7.10.13 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/81.0.4044.268 https://enroll.gppc.ru/ 200 0 0 30
+2021-05-15 04:15:36 10.7.10.3 GET /bundles/jquery v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1 80 - 10.7.10.13 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/81.0.4044.268 https://enroll.gppc.ru/ 200 0 0 12
+2021-05-15 04:15:40 10.7.10.3 GET /Content/front.css - 80 - 10.7.10.13 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/81.0.4044.268 https://enroll.gppc.ru/ 200 0 0 12
+2021-05-15 04:15:43 10.7.10.3 GET /bundles/enroll_public v=OqtA6kLUsle6PYnUWYKRgG-FljtQ5eDp7dL83yP_-Vc1 80 - 10.7.10.13 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/81.0.4044.268 https://enroll.gppc.ru/ 200 0 0 3
+2021-05-15 04:15:50 10.7.10.3 GET /api/Data/GetAddresses - 80 - 10.7.10.13 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/81.0.4044.268 https://enroll.gppc.ru/ 200 0 0 3806
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2021-05-15 04:39:23
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2021-05-15 04:39:23 10.7.10.3 GET / - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 - 200 0 0 1027
+2021-05-15 04:39:23 10.7.10.3 GET /Content/front.css - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 13
+2021-05-15 04:39:23 10.7.10.3 GET /Content/enroll.css - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 19
+2021-05-15 04:39:23 10.7.10.3 GET /Content/bootstrap.css - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 18
+2021-05-15 04:39:23 10.7.10.3 GET /bundles/jquery v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 10
+2021-05-15 04:39:23 10.7.10.3 GET /bundles/enroll_public v=OqtA6kLUsle6PYnUWYKRgG-FljtQ5eDp7dL83yP_-Vc1 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 3
+2021-05-15 04:39:23 10.7.10.3 GET /Content/loader-big.gif - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 4
+2021-05-15 04:39:23 10.7.10.3 GET /Content/images/back.png - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/Content/front.css 200 0 0 8
+2021-05-15 04:39:23 10.7.10.3 GET /Content/back/enroll.jpg - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/Content/enroll.css 200 0 0 41
+2021-05-15 04:39:25 10.7.10.3 GET /favicon.ico - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 14
+2021-05-15 04:39:25 10.7.10.3 GET /api/Data/GetAddresses - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 2194
+2021-05-15 04:39:35 10.7.10.3 GET /api/Data/GetDates address_id=17&_=1621053563183 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 71
+2021-05-15 04:39:46 10.7.10.3 GET /api/Data/GetIntervals address_id=17&date=07.06.2021&_=1621053563184 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 29
+2021-05-15 04:41:18 10.7.10.3 POST /api/Data/PostEnroll - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 427
+2021-05-15 04:42:08 10.7.10.3 GET / - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 - 200 0 0 4
+2021-05-15 04:42:08 10.7.10.3 GET /Content/enroll.css - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 304 0 0 1
+2021-05-15 04:42:08 10.7.10.3 GET /Content/bootstrap.css - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 304 0 0 1
+2021-05-15 04:42:08 10.7.10.3 GET /Content/front.css - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 304 0 0 1
+2021-05-15 04:42:09 10.7.10.3 GET /api/Data/GetAddresses - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 21
+2021-05-15 04:42:25 10.7.10.3 GET /api/Data/GetDates address_id=17&_=1621053729240 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 5
+2021-05-15 04:42:37 10.7.10.3 GET /api/Data/GetIntervals address_id=17&date=08.06.2021&_=1621053729241 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 8
+2021-05-15 04:44:22 10.7.10.3 GET / - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 - 200 0 0 4
+2021-05-15 04:44:22 10.7.10.3 GET /Content/enroll.css - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 304 0 0 0
+2021-05-15 04:44:22 10.7.10.3 GET /Content/bootstrap.css - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 304 0 0 0
+2021-05-15 04:44:22 10.7.10.3 GET /Content/front.css - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 304 0 0 0
+2021-05-15 04:44:22 10.7.10.3 GET /api/Data/GetAddresses - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 20
+2021-05-15 04:44:23 10.7.10.3 GET /favicon.ico - 80 - 10.7.10.13 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/90.0.4430.212+Safari/537.36 https://enroll.gppc.ru/ 200 0 0 3
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2021-05-15 05:51:19
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2021-05-15 05:51:18 10.7.10.3 GET / - 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Version/14.0.3+Mobile/15E148+Safari/604.1 - 200 0 0 1035
+2021-05-15 05:51:19 10.7.10.3 GET /bundles/enroll_public v=OqtA6kLUsle6PYnUWYKRgG-FljtQ5eDp7dL83yP_-Vc1 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Version/14.0.3+Mobile/15E148+Safari/604.1 https://enroll.gppc.ru/ 200 0 0 4
+2021-05-15 05:51:19 10.7.10.3 GET /bundles/jquery v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Version/14.0.3+Mobile/15E148+Safari/604.1 https://enroll.gppc.ru/ 200 0 0 6
+2021-05-15 05:51:19 10.7.10.3 GET /Content/enroll.css - 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Version/14.0.3+Mobile/15E148+Safari/604.1 https://enroll.gppc.ru/ 200 0 0 21
+2021-05-15 05:51:19 10.7.10.3 GET /Content/front.css - 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Version/14.0.3+Mobile/15E148+Safari/604.1 https://enroll.gppc.ru/ 200 0 0 19
+2021-05-15 05:51:19 10.7.10.3 GET /Content/loader-big.gif - 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Version/14.0.3+Mobile/15E148+Safari/604.1 https://enroll.gppc.ru/ 200 0 0 19
+2021-05-15 05:51:19 10.7.10.3 GET /Content/bootstrap.css - 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Version/14.0.3+Mobile/15E148+Safari/604.1 https://enroll.gppc.ru/ 200 0 0 36
+2021-05-15 05:51:19 10.7.10.3 GET /Content/back/enroll.jpg - 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Version/14.0.3+Mobile/15E148+Safari/604.1 https://enroll.gppc.ru/ 200 0 0 21
+2021-05-15 05:51:19 10.7.10.3 GET /Content/images/back.png - 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Version/14.0.3+Mobile/15E148+Safari/604.1 https://enroll.gppc.ru/ 200 0 0 28
+2021-05-15 05:51:19 10.7.10.3 GET /favicon.ico - 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Version/14.0.3+Mobile/15E148+Safari/604.1 https://enroll.gppc.ru/ 200 0 0 6
+2021-05-15 05:51:22 10.7.10.3 GET /api/Data/GetAddresses - 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Version/14.0.3+Mobile/15E148+Safari/604.1 https://enroll.gppc.ru/ 200 0 0 2205
+2021-05-15 05:51:52 10.7.10.3 GET /api/Data/GetDates address_id=62&_=1621057880122 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+Version/14.0.3+Mobile/15E148+Safari/604.1 https://enroll.gppc.ru/ 200 0 0 39
+2021-05-15 06:04:56 10.7.10.3 GET / - 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 - 200 0 0 4
+2021-05-15 06:04:56 10.7.10.3 GET /Content/bootstrap.css - 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://enroll.gppc.ru/ 304 0 0 1
+2021-05-15 06:04:56 10.7.10.3 GET /Content/enroll.css - 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://enroll.gppc.ru/ 304 0 0 1
+2021-05-15 06:04:56 10.7.10.3 GET /Content/front.css - 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://enroll.gppc.ru/ 304 0 0 1
+2021-05-15 06:04:56 10.7.10.3 GET /api/Data/GetAddresses - 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://enroll.gppc.ru/ 200 0 0 24
+2021-05-15 06:05:03 10.7.10.3 GET /favicon.ico - 80 - 10.7.10.13 Mozilla/5.0+(iPhone;+CPU+OS+14_4_2+like+Mac+OS+X)+AppleWebKit/605.1.15+(KHTML,+like+Gecko)+FxiOS/33.1++Mobile/15E148+Safari/605.1.15 - 200 0 0 18
+2021-05-15 06:05:05 10.7.10.3 GET /api/Data/GetDates address_id=22&_=1621058695329 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://enroll.gppc.ru/ 200 0 0 5
+2021-05-15 06:05:18 10.7.10.3 GET /api/Data/GetIntervals address_id=22&date=17.05.2021&_=1621058695330 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://enroll.gppc.ru/ 200 0 0 18
+2021-05-15 06:08:44 10.7.10.3 GET / - 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://gppc.ru/ 200 0 0 4
+2021-05-15 06:08:44 10.7.10.3 GET /Content/enroll.css - 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://enroll.gppc.ru/ 304 0 0 0
+2021-05-15 06:08:44 10.7.10.3 GET /Content/bootstrap.css - 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://enroll.gppc.ru/ 304 0 0 0
+2021-05-15 06:08:44 10.7.10.3 GET /Content/front.css - 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://enroll.gppc.ru/ 304 0 0 0
+2021-05-15 06:08:44 10.7.10.3 GET /api/Data/GetAddresses - 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://enroll.gppc.ru/ 200 0 0 19
+2021-05-15 06:08:48 10.7.10.3 GET /api/Data/GetDates address_id=27&_=1621058923645 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://enroll.gppc.ru/ 200 0 0 5
+2021-05-15 06:08:52 10.7.10.3 GET /api/Data/GetDates address_id=22&_=1621058923646 80 - 10.7.10.13 Mozilla/5.0+(Android+10;+Mobile;+rv:88.0)+Gecko/88.0+Firefox/88.0 https://enroll.gppc.ru/ 200 0 0 5

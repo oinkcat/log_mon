@@ -901,6 +901,16 @@
         "build": {
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "LogMon.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/LogMon.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LogMon.Data.dll": {}
+        }
       }
     }
   },
@@ -3494,10 +3504,16 @@
         "xunit.runner.visualstudio.2.4.0.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "LogMon.Data/1.0.0": {
+      "type": "project",
+      "path": "../LogMon.Data/LogMon.Data.csproj",
+      "msbuildProject": "../LogMon.Data/LogMon.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "LogMon.Data >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "coverlet.collector >= 1.2.0",
       "xunit >= 2.4.0",
@@ -3531,7 +3547,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\softc\\Documents\\vs_code\\iis_logmon\\LogMon.Data\\LogMon.Data.csproj": {
+              "projectPath": "C:\\Users\\softc\\Documents\\vs_code\\iis_logmon\\LogMon.Data\\LogMon.Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

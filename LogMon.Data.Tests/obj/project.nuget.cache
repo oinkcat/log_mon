@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VxRiPaqyrrS5q54WW6v7pS8s1iLW9cz4ltHD/ow5DMU1li3B9hXxwR55Bhb+42oh1aYLK1HUIr4vbVYpr2CobA==",
+  "dgSpecHash": "n6FuC5+hvGM04m3ab7q39eI4LqQS2i/rxFqCJXfjn5KQ4g8YxN9RScc6oYc5qyfd06WslgW6Gu1INLGtFsNDbg==",
   "success": true,
   "projectFilePath": "C:\\Users\\softc\\Documents\\vs_code\\iis_logmon\\LogMon.Data.Tests\\LogMon.Data.Tests.csproj",
   "expectedPackageFiles": [
