@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J+ok9X70yrnMVOQhs9TlQhO0KIvekvrzvghTn8VmPu4k5iCwKRt5iaMoCem9OlbVV4J4AWYO+zNdyjnBuJlU/w==",
+  "dgSpecHash": "D0EzBHnTbf0GdwLfUYs7WOBXn8A/ds5yP13hOokvTRS880R1Y6wyvrG506MNReUqx8BRLkhMA/WbgRgRpIpgOg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\softc\\Documents\\vs_code\\iis_logmon\\LogMon.Data\\LogMon.Data.csproj",
+  "projectFilePath": "C:\\Users\\softc\\source\\repos\\log_mon\\LogMon.Data\\LogMon.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\softc\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\softc\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

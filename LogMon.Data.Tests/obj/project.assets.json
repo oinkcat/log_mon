@@ -3527,29 +3527,32 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\softc\\Documents\\vs_code\\iis_logmon\\LogMon.Data.Tests\\LogMon.Data.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\softc\\source\\repos\\log_mon\\LogMon.Data.Tests\\LogMon.Data.Tests.csproj",
       "projectName": "LogMon.Data.Tests",
-      "projectPath": "C:\\Users\\softc\\Documents\\vs_code\\iis_logmon\\LogMon.Data.Tests\\LogMon.Data.Tests.csproj",
+      "projectPath": "C:\\Users\\softc\\source\\repos\\log_mon\\LogMon.Data.Tests\\LogMon.Data.Tests.csproj",
       "packagesPath": "C:\\Users\\softc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\softc\\Documents\\vs_code\\iis_logmon\\LogMon.Data.Tests\\obj\\",
+      "outputPath": "C:\\Users\\softc\\source\\repos\\log_mon\\LogMon.Data.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\softc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\softc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\softc\\Documents\\vs_code\\iis_logmon\\LogMon.Data\\LogMon.Data.csproj": {
-              "projectPath": "C:\\Users\\softc\\Documents\\vs_code\\iis_logmon\\LogMon.Data\\LogMon.Data.csproj"
+            "C:\\Users\\softc\\source\\repos\\log_mon\\LogMon.Data\\LogMon.Data.csproj": {
+              "projectPath": "C:\\Users\\softc\\source\\repos\\log_mon\\LogMon.Data\\LogMon.Data.csproj"
             }
           }
         }
@@ -3562,6 +3565,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
@@ -3595,7 +3599,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.409\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }

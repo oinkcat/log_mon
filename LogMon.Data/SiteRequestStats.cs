@@ -25,7 +25,6 @@ namespace LogMon.Data
         /// <summary>
         /// Count of GET requests for MVC actions
         /// </summary>
-        /// <value></value>
         public int ActionCount { get; set; }
 
         /// <summary>

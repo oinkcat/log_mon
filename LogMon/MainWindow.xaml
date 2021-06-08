@@ -1,0 +1,45 @@
+﻿<Window x:Class="LogMon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogMon.ViewModels"
+        mc:Ignorable="d"
+        Title="IIS Logs Monitoring"
+        MinHeight="500" MinWidth="800"
+        Height="500" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:LogStatsViewModel x:Key="vm" />
+    </Window.Resources>
+    
+    <Grid DataContext="{StaticResource vm}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal"
+                    Margin="10,20">
+            <Label Margin="0,0,10,0">Site:</Label>
+            <ComboBox Width="200"
+                      IsEnabled="{Binding Ready}"
+                      ItemsSource="{Binding Sites}"
+                      SelectedItem="{Binding CurrentSite}" />
+
+            <Label Margin="20,0,0,0">Dates range:</Label>
+            <Label HorizontalAlignment="Right" Content="{Binding DateInterval}" />
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding CurrentSiteStats}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=D}" Width="5*" />
+                <DataGridTextColumn Header="# Requests" Binding="{Binding TotalCount}" Width="*" />
+                <DataGridTextColumn Header="Static" Binding="{Binding StaticCount}" Width="*" />
+                <DataGridTextColumn Header="Actions" Binding="{Binding ActionCount}" Width="*" />
+                <DataGridTextColumn Header="Non GET" Binding="{Binding NonGetCount}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
