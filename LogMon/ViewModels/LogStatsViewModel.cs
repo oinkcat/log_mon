@@ -13,7 +13,7 @@ namespace LogMon.ViewModels
     /// </summary>
     public class LogStatsViewModel : INotifyPropertyChanged
     {
-        private Dictionary<int, IList<SiteRequestStats>> dailyStats;
+        private Dictionary<int, IList<StatRowViewModel>> dailyStats;
 
         private SiteInfo currentSite;
 
@@ -40,7 +40,7 @@ namespace LogMon.ViewModels
         /// <summary>
         /// Selected site's request statistics
         /// </summary>
-        public IList<SiteRequestStats> CurrentSiteStats { get; private set; }
+        public IList<StatRowViewModel> CurrentSiteStats { get; private set; }
 
         /// <summary>
         /// Date interval for statistics
@@ -77,12 +77,18 @@ namespace LogMon.ViewModels
             IStatsProvider statsProvider = new SampleStatsProvider();
             Sites.AddRange(await statsProvider.GetSites());
 
-            dailyStats = new Dictionary<int, IList<SiteRequestStats>>();
+            dailyStats = new Dictionary<int, IList<StatRowViewModel>>();
 
             foreach(var site in Sites)
             {
-                var siteStats = await statsProvider.GetSiteStats(site, start, end);
-                dailyStats.Add(site.Id, siteStats);
+                var siteDailyStats = await statsProvider.GetSiteStats(site, start, end);
+                int maxTotalRequests = siteDailyStats.Max(stat => stat.TotalCount);
+
+                var siteStatsRow = siteDailyStats
+                    .Select(stat => new StatRowViewModel(stat, maxTotalRequests))
+                    .ToList();
+
+                dailyStats.Add(site.Id, siteStatsRow);
             }
         }
 

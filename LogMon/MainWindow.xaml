@@ -11,6 +11,7 @@
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <local:LogStatsViewModel x:Key="vm" />
+        <local:DateToColorConverter x:Key="conv" />
     </Window.Resources>
     
     <Grid DataContext="{StaticResource vm}">
@@ -34,11 +35,42 @@
 
         <DataGrid Grid.Row="1" ItemsSource="{Binding CurrentSiteStats}" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=D}" Width="5*" />
-                <DataGridTextColumn Header="# Requests" Binding="{Binding TotalCount}" Width="*" />
-                <DataGridTextColumn Header="Static" Binding="{Binding StaticCount}" Width="*" />
-                <DataGridTextColumn Header="Actions" Binding="{Binding ActionCount}" Width="*" />
-                <DataGridTextColumn Header="Non GET" Binding="{Binding NonGetCount}" Width="*" />
+                <DataGridTemplateColumn Header="Date" SortMemberPath="Date" Width="5*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock VerticalAlignment="Center"
+                                       Padding="2,0,0,0"
+                                       Text="{Binding Date, StringFormat=D}"
+                                       Foreground="{Binding Date, Converter={StaticResource conv}}" />
+                        </DataTemplate>
+                        
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="# Requests" SortMemberPath="TotalCount" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding TotalCount}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Chart" Width="4*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="{Binding StaticColLength}" />
+                                    <ColumnDefinition Width="{Binding ActionColLength}" />
+                                    <ColumnDefinition Width="{Binding NonGetColLength}" />
+                                    <ColumnDefinition Width="{Binding BlankColLength}" />
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0" Background="Red" ToolTip="{Binding StaticText}" />
+                                <Border Grid.Column="1" Background="Yellow" ToolTip="{Binding ActionText}" />
+                                <Border Grid.Column="2" Background="Green" ToolTip="{Binding NonGetText}" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
