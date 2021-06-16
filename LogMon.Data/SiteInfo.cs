@@ -26,6 +26,10 @@ namespace LogMon.Data
         /// Get site name and Id in string
         /// </summary>
         /// <returns>Site name and Id</returns>
-        public override string ToString() => $"{Name}:{Id}";
+        public override string ToString()
+        {
+            string siteState = IsStarted ? "up" : "down";
+            return $"{Name}:{Id} ({siteState})";
+        }
     }
 }

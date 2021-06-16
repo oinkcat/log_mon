@@ -45,16 +45,18 @@ namespace LogMon.ViewModels
 
         private void ComputeRates(int absMax)
         {
-            double sr = Math.Round((double)requestStats.StaticCount / TotalCount, 2);
+            double totalRequests = (TotalCount > 0) ? TotalCount : 1;
+
+            double sr = Math.Round((double)requestStats.StaticCount / totalRequests, 2);
             StaticColLength = new GridLength(sr, GridUnitType.Star);
 
-            double ar = Math.Round((double)requestStats.ActionCount / TotalCount, 2);
+            double ar = Math.Round((double)requestStats.ActionCount / totalRequests, 2);
             ActionColLength = new GridLength(ar, GridUnitType.Star);
 
-            double ngr = Math.Round((double)requestStats.NonGetCount / TotalCount, 2);
+            double ngr = Math.Round((double)requestStats.NonGetCount / totalRequests, 2);
             NonGetColLength = new GridLength(ngr, GridUnitType.Star);
 
-            double r = Math.Round((double)absMax / TotalCount, 2) - 1;
+            double r = Math.Round((double)absMax / totalRequests, 2) - 1;
             BlankColLength = new GridLength(r, GridUnitType.Star);
         }
     }

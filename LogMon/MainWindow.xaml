@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LogMon.ViewModels"
         mc:Ignorable="d"
+        x:Name="ThisWindow"
         Title="IIS Logs Monitoring"
         MinHeight="500" MinWidth="800"
         Height="500" Width="800"
@@ -35,7 +36,9 @@
 
         <DataGrid Grid.Row="1" ItemsSource="{Binding CurrentSiteStats}" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Date" SortMemberPath="Date" Width="5*">
+                <DataGridTemplateColumn Header="Date" 
+                                        SortDirection="Descending" 
+                                        SortMemberPath="Date" Width="5*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock VerticalAlignment="Center"

@@ -3,8 +3,9 @@ using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using System.Windows;
 using LogMon.Data;
-using LogMon.SampleData;
+using LogMon.Data.IIS;
 
 namespace LogMon.ViewModels
 {
@@ -59,22 +60,37 @@ namespace LogMon.ViewModels
             var endDate = DateTime.Now.Date;
             var startDate = endDate.AddMonths(-1);
 
-            LoadStatistics(startDate, endDate).ContinueWith(_ =>
+            LoadStatistics(startDate, endDate).ContinueWith(completedTask =>
             {
-                // Update UI
-                CurrentSite = Sites.FirstOrDefault();
+                if(completedTask.Status == TaskStatus.RanToCompletion)
+                {
+                    // Update UI
+                    CurrentSite = Sites.FirstOrDefault();
 
-                DateInterval = String.Concat(startDate.ToShortDateString(),
-                                             " - ",
-                                             endDate.ToShortDateString());
-                Ready = true;
+                    DateInterval = String.Concat(startDate.ToShortDateString(),
+                                                 " - ",
+                                                 endDate.ToShortDateString());
+                    Ready = true;
+                }
+                else
+                {
+                    AlertError(completedTask.Exception.InnerException);
+                }
+            });
+        }
+
+        private void AlertError(Exception e)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                var alerter = Application.Current.MainWindow as IUserAlerter;
+                alerter.ShowErrorAndExit(e);
             });
         }
 
         private async Task LoadStatistics(DateTime start, DateTime end)
         {
-
-            IStatsProvider statsProvider = new SampleStatsProvider();
+            IStatsProvider statsProvider = new ServerSiteStatsProvider();
             Sites.AddRange(await statsProvider.GetSites());
 
             dailyStats = new Dictionary<int, IList<StatRowViewModel>>();
@@ -86,6 +102,7 @@ namespace LogMon.ViewModels
 
                 var siteStatsRow = siteDailyStats
                     .Select(stat => new StatRowViewModel(stat, maxTotalRequests))
+                    .OrderByDescending(stat => stat.Date)
                     .ToList();
 
                 dailyStats.Add(site.Id, siteStatsRow);

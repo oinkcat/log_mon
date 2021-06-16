@@ -12,7 +12,7 @@ namespace LogMon.Data
         private const int MethodFieldMapIndex = 0;
         private const int UriStemFieldMapIndex = 1;
 
-        private int[] fieldsMap;
+        private readonly int[] fieldsMap;
 
         private readonly string siteLogsDir;
 
@@ -24,7 +24,7 @@ namespace LogMon.Data
         public SiteStatsCounter(SiteInfo site, string iisLogsDir)
         {
             Site = site;
-            fieldsMap = new int[2];
+            fieldsMap = new int[UriStemFieldMapIndex + 1];
             siteLogsDir = Path.Combine(iisLogsDir, $"W3SVC{site.Id}");
         }
 
@@ -51,20 +51,29 @@ namespace LogMon.Data
 
         private void CountDailyStats(SiteRequestStats stats)
         {
-            string logFileName = $"u_ex{stats.Date.ToString("yyMMdd")}.log";
+            string logFileName = $"u_ex{stats.Date:yyMMdd}.log";
             string logPath = Path.Combine(siteLogsDir, logFileName);
 
             if(File.Exists(logPath))
             {
-                foreach(string logLine in File.ReadLines(logPath))
+                using (var logStream = new FileStream(logPath, 
+                                                      FileMode.Open, 
+                                                      FileAccess.Read, 
+                                                      FileShare.ReadWrite))
+                using (var lineReader = new StreamReader(logStream))
                 {
-                    if(logLine.StartsWith("#"))
+                    while(!lineReader.EndOfStream)
                     {
-                        ParseComment(logLine.Substring(1));
-                    }
-                    else if(!String.IsNullOrWhiteSpace(logLine))
-                    {
-                        ParseRequestInfo(logLine, stats);
+                        string logLine = lineReader.ReadLine();
+
+                        if (logLine.StartsWith("#"))
+                        {
+                            ParseComment(logLine.Substring(1));
+                        }
+                        else if (!String.IsNullOrWhiteSpace(logLine))
+                        {
+                            ParseRequestInfo(logLine, stats);
+                        }
                     }
                 }
             }

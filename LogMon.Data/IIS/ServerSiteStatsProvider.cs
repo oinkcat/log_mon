@@ -10,8 +10,8 @@ namespace LogMon.Data.IIS
     /// </summary>
     public class ServerSiteStatsProvider : IStatsProvider
     {
-        private const string AppCmdRelPath = @"\inetsrv\appcmd.exe";
-        private const string LogsRelPath = @"inetsrv\logs";
+        private const string AppCmdRelPath = @"inetsrv\appcmd.exe";
+        private const string LogsRelPath = @"inetpub\logs\LogFiles";
 
         private string AppCmdPath
         {
@@ -20,15 +20,18 @@ namespace LogMon.Data.IIS
 
         private string LogsPath
         {
-            get => Path.Combine(Path.GetPathRoot(Environment.SystemDirectory), LogsPath);
+            get => Path.Combine(Path.GetPathRoot(Environment.SystemDirectory), LogsRelPath);
         }
 
         /// <inheritdoc />
         public async Task<IList<SiteInfo>> GetSites()
         {
-            CheckServerFilesExist();
+            CheckServerComponentsExist();
 
-            return new List<SiteInfo>();
+            var siteInfoSource = new ServerSiteInfoSource(AppCmdPath);
+            var siteLister = new SiteInfoReader(siteInfoSource);
+
+            return siteLister.GetSiteInfos();
         }
 
         /// <inheritdoc />
@@ -36,12 +39,15 @@ namespace LogMon.Data.IIS
                                                                 DateTime startDate,
                                                                 DateTime endDate)
         {
-            CheckServerFilesExist();
+            CheckServerComponentsExist();
 
-            return new List<SiteRequestStats>();
+            var logStatsCounter = new SiteStatsCounter(site, LogsPath);
+
+            return logStatsCounter.CountStats(startDate, endDate);
         }
 
-        private void CheckServerFilesExist()
+        // Check for APPCMD and IIS logs directory, throw if doesn't exist
+        private void CheckServerComponentsExist()
         {
             if(!File.Exists(AppCmdPath) || !Directory.Exists(LogsPath))
             {
