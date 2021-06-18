@@ -13,32 +13,66 @@
     <Window.Resources>
         <local:LogStatsViewModel x:Key="vm" />
         <local:DateToColorConverter x:Key="conv" />
+        <BooleanToVisibilityConverter x:Key="boolToVis" />
     </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard Duration="00:00:02" RepeatBehavior="Forever">
+                    <DoubleAnimation Storyboard.TargetName="loadIndicator" 
+                                     Storyboard.TargetProperty="Opacity"
+                                     From="1.0" 
+                                     To="0.0" 
+                                     AutoReverse="True" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
     
     <Grid DataContext="{StaticResource vm}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
-        <StackPanel Grid.Row="0"
-                    Orientation="Horizontal"
-                    Margin="10,20">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="10">
             <Label Margin="0,0,10,0">Site:</Label>
             <ComboBox Width="200"
-                      IsEnabled="{Binding Ready}"
-                      ItemsSource="{Binding Sites}"
-                      SelectedItem="{Binding CurrentSite}" />
+                    IsEnabled="{Binding Ready}"
+                    ItemsSource="{Binding Sites}"
+                    SelectedItem="{Binding CurrentSite}" />
+        </StackPanel>
 
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="10">
             <Label Margin="20,0,0,0">Dates range:</Label>
             <Label HorizontalAlignment="Right" Content="{Binding DateInterval}" />
         </StackPanel>
 
-        <DataGrid Grid.Row="1" ItemsSource="{Binding CurrentSiteStats}" AutoGenerateColumns="False">
+        <Border Grid.Column="2" Margin="10">
+            <Label x:Name="loadIndicator"
+                HorizontalAlignment="Right" 
+                Foreground="DarkCyan"
+                FontWeight="DemiBold"
+                Content="Loading data..."
+                Visibility="{Binding IsLoading, Converter={StaticResource boolToVis}}" />
+        </Border>
+
+        <DataGrid Grid.Row="1"
+                  Grid.ColumnSpan="3"
+                  ItemsSource="{Binding CurrentSiteStats}" 
+                  AutoGenerateColumns="False" 
+                  IsEnabled="{Binding Ready}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Date" 
                                         SortDirection="Descending" 
-                                        SortMemberPath="Date" Width="5*">
+                                        SortMemberPath="Date" Width="3*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock VerticalAlignment="Center"
@@ -67,9 +101,9 @@
                                     <ColumnDefinition Width="{Binding BlankColLength}" />
                                 </Grid.ColumnDefinitions>
 
-                                <Border Grid.Column="0" Background="Red" ToolTip="{Binding StaticText}" />
-                                <Border Grid.Column="1" Background="Yellow" ToolTip="{Binding ActionText}" />
-                                <Border Grid.Column="2" Background="Green" ToolTip="{Binding NonGetText}" />
+                                <Border Grid.Column="0" Background="Teal" ToolTip="{Binding StaticText}" />
+                                <Border Grid.Column="1" Background="SandyBrown" ToolTip="{Binding ActionText}" />
+                                <Border Grid.Column="2" Background="LawnGreen" ToolTip="{Binding NonGetText}" />
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

@@ -31,7 +31,7 @@ namespace LogMon.Data.IIS
             var siteInfoSource = new ServerSiteInfoSource(AppCmdPath);
             var siteLister = new SiteInfoReader(siteInfoSource);
 
-            return siteLister.GetSiteInfos();
+            return await Task.Run(() => siteLister.GetSiteInfos());
         }
 
         /// <inheritdoc />
@@ -43,7 +43,7 @@ namespace LogMon.Data.IIS
 
             var logStatsCounter = new SiteStatsCounter(site, LogsPath);
 
-            return logStatsCounter.CountStats(startDate, endDate);
+            return await Task.Run(() => logStatsCounter.CountStats(startDate, endDate));
         }
 
         // Check for APPCMD and IIS logs directory, throw if doesn't exist

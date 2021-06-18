@@ -1,18 +1,24 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Input;
 
 namespace LogMon
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, IUserAlerter
+    public partial class MainWindow : Window, IWindowHelpers
     {
         private const int ErrorCodeAnyError = 10;
 
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void ToggleLoadingState(bool loading)
+        {
+            this.Cursor = loading ? Cursors.Wait : Cursors.Arrow;
         }
 
         public void ShowErrorAndExit(Exception e)
