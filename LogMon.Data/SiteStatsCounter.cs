@@ -1,6 +1,9 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace LogMon.Data
 {
@@ -9,6 +12,10 @@ namespace LogMon.Data
     /// </summary>
     public class SiteStatsCounter
     {
+        private const int MaxDaysInMonth = 31;
+
+        private const int MaxLogReadingThreads = 4;
+
         private const int MethodFieldMapIndex = 0;
         private const int UriStemFieldMapIndex = 1;
 
@@ -36,17 +43,24 @@ namespace LogMon.Data
         /// <returns>Site request statistics by days</returns>
         public IList<SiteRequestStats> CountStats(DateTime start, DateTime end)
         {
-            var requestStats = new List<SiteRequestStats>();
+            var requestStats = new ConcurrentBag<SiteRequestStats>();
 
-            for(var date = start.Date; date <= end.Date; date = date.AddDays(1))
-            {
+            var statDates = Enumerable.Range(0, MaxDaysInMonth + 1)
+                .Select(d => start.AddDays(d))
+                .TakeWhile(date => date <= end.Date);
+
+            var parOptions = new ParallelOptions { 
+                MaxDegreeOfParallelism = MaxLogReadingThreads
+            };
+
+            Parallel.ForEach(statDates, parOptions, date => {
                 var dailyStats = new SiteRequestStats(Site, date);
                 CountDailyStats(dailyStats);
 
                 requestStats.Add(dailyStats);
-            }
+            });
 
-            return requestStats;
+            return requestStats.ToList();
         }
 
         private void CountDailyStats(SiteRequestStats stats)
