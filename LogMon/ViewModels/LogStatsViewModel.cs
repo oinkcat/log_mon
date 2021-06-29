@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using LogMon.Data;
 using LogMon.Data.IIS;
+using LogMon.DataProviders;
 
 namespace LogMon.ViewModels
 {
@@ -97,17 +98,20 @@ namespace LogMon.ViewModels
 
         private void SetLoadingUiState(bool loading)
         {
-            Application.Current.Dispatcher.Invoke(() => UIHelpers.ToggleLoadingState(loading));
+            Application.Current.Dispatcher.Invoke(() => UIHelpers?.ToggleLoadingState(loading));
         }
 
         private void AlertError(Exception e)
         {
-            Application.Current.Dispatcher.Invoke(() => UIHelpers.ShowErrorAndExit(e));
+            Application.Current.Dispatcher.Invoke(() => UIHelpers?.ShowErrorAndExit(e));
         }
 
         private async Task LoadStatistics(DateTime start, DateTime end)
         {
-            IStatsProvider statsProvider = new ServerSiteStatsProvider();
+            var statsProvider = (UIHelpers == null)
+                ? new SampleStatsProvider() as IStatsProvider
+                : new ServerSiteStatsProvider();
+
             var allSites = await statsProvider.GetSites();
 
             dailyStats = new Dictionary<int, IList<StatRowViewModel>>();
