@@ -39,6 +39,7 @@ namespace LogMon.DataProviders
                 {
                     StaticCount = rng.Next(MaxRequestsCount),
                     ActionCount = rng.Next(MaxRequestsCount),
+                    AspNetCount = rng.Next(MaxRequestsCount),
                     NonGetCount = rng.Next(MaxRequestsCount)
                 })
                 .ToList();

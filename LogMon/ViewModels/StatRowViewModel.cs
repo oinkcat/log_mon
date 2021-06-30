@@ -26,6 +26,8 @@ namespace LogMon.ViewModels
 
         public GridLength ActionColLength { get; private set; }
 
+        public GridLength AspNetColLength { get; private set; }
+
         public GridLength NonGetColLength { get; private set; }
 
         public GridLength BlankColLength { get; private set; }
@@ -33,6 +35,8 @@ namespace LogMon.ViewModels
         public string StaticText => $"Static requests: {requestStats.StaticCount}";
 
         public string ActionText => $"Action requests: {requestStats.ActionCount}";
+
+        public string AspNetText => $"ASP.NET requests: {requestStats.AspNetCount}";
 
         public string NonGetText => $"Non GET requests: {requestStats.NonGetCount}";
 
@@ -52,6 +56,9 @@ namespace LogMon.ViewModels
 
             double ar = Math.Round((double)requestStats.ActionCount / totalRequests, 2);
             ActionColLength = new GridLength(ar, GridUnitType.Star);
+
+            double anr = Math.Round((double)requestStats.AspNetCount / totalRequests, 2);
+            AspNetColLength = new GridLength(anr, GridUnitType.Star);
 
             double ngr = Math.Round((double)requestStats.NonGetCount / totalRequests, 2);
             NonGetColLength = new GridLength(ngr, GridUnitType.Star);

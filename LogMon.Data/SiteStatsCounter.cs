@@ -23,6 +23,13 @@ namespace LogMon.Data
 
         private readonly string siteLogsDir;
 
+        private readonly HashSet<string> aspNetExts = new HashSet<string>(new [] {
+            ".aspx",
+            ".asmx",
+            ".ashx",
+            ".axd"
+        });
+
         /// <summary>
         /// Information of site for stats
         /// </summary>
@@ -119,21 +126,21 @@ namespace LogMon.Data
         {
             string[] infoFields = infoLine.Split();
 
-            if(infoFields[fieldsMap[MethodFieldMapIndex]].Equals("GET"))
+            string requestUriStem = infoFields[fieldsMap[UriStemFieldMapIndex]];
+            string extension = Path.GetExtension(requestUriStem).ToLower();
+            bool isGetMethod = infoFields[fieldsMap[MethodFieldMapIndex]].Equals("GET");
+
+            if(aspNetExts.Contains(extension))
             {
-                string requestUriStem = infoFields[fieldsMap[UriStemFieldMapIndex]];
-
-                int lastDotPos = requestUriStem.LastIndexOf('.');
-                int lastSlashPos = requestUriStem.LastIndexOf('/');
-
-                if(lastDotPos > lastSlashPos)
-                {
-                    stats.StaticCount++;
-                }
-                else
-                {
-                    stats.ActionCount++;
-                }
+                stats.AspNetCount++;
+            }
+            else if(isGetMethod && extension.Equals(String.Empty))
+            {
+                stats.ActionCount++;
+            }
+            else if(isGetMethod)
+            {
+                stats.StaticCount++;
             }
             else
             {

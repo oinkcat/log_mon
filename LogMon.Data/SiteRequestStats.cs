@@ -28,6 +28,11 @@ namespace LogMon.Data
         public int ActionCount { get; set; }
 
         /// <summary>
+        /// Count of ASP.NET specific handler requests
+        /// </summary>
+        public int AspNetCount { get; set; }
+
+        /// <summary>
         /// Count all rest requests
         /// </summary>
         public int NonGetCount { get; set; }
@@ -35,7 +40,7 @@ namespace LogMon.Data
         /// <summary>
         /// Total count of requests by given day
         /// </summary>
-        public int TotalCount => StaticCount + ActionCount + NonGetCount;
+        public int TotalCount => StaticCount + ActionCount + AspNetCount + NonGetCount;
 
         public SiteRequestStats(SiteInfo site, DateTime date)
         {

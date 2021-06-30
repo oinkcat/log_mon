@@ -90,20 +90,22 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Chart" Width="4*">
+                <DataGridTemplateColumn Header="Chart" Width="5*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="{Binding StaticColLength}" />
                                     <ColumnDefinition Width="{Binding ActionColLength}" />
+                                    <ColumnDefinition Width="{Binding AspNetColLength}" />
                                     <ColumnDefinition Width="{Binding NonGetColLength}" />
                                     <ColumnDefinition Width="{Binding BlankColLength}" />
                                 </Grid.ColumnDefinitions>
 
                                 <Border Grid.Column="0" Background="Teal" ToolTip="{Binding StaticText}" />
                                 <Border Grid.Column="1" Background="SandyBrown" ToolTip="{Binding ActionText}" />
-                                <Border Grid.Column="2" Background="LawnGreen" ToolTip="{Binding NonGetText}" />
+                                <Border Grid.Column="2" Background="MediumPurple" ToolTip="{Binding AspNetText}" />
+                                <Border Grid.Column="3" Background="LawnGreen" ToolTip="{Binding NonGetText}" />
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
