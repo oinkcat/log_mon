@@ -95,6 +95,7 @@
                         <DataTemplate>
                             <Grid>
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="{Binding ErrorColLength}" />
                                     <ColumnDefinition Width="{Binding StaticColLength}" />
                                     <ColumnDefinition Width="{Binding ActionColLength}" />
                                     <ColumnDefinition Width="{Binding AspNetColLength}" />
@@ -102,10 +103,11 @@
                                     <ColumnDefinition Width="{Binding BlankColLength}" />
                                 </Grid.ColumnDefinitions>
 
-                                <Border Grid.Column="0" Background="Teal" ToolTip="{Binding StaticText}" />
-                                <Border Grid.Column="1" Background="SandyBrown" ToolTip="{Binding ActionText}" />
-                                <Border Grid.Column="2" Background="MediumPurple" ToolTip="{Binding AspNetText}" />
-                                <Border Grid.Column="3" Background="LawnGreen" ToolTip="{Binding NonGetText}" />
+                                <Border Grid.Column="0" Background="OrangeRed" ToolTip="{Binding ErrorText}" />
+                                <Border Grid.Column="1" Background="Teal" ToolTip="{Binding StaticText}" />
+                                <Border Grid.Column="2" Background="SandyBrown" ToolTip="{Binding ActionText}" />
+                                <Border Grid.Column="3" Background="MediumPurple" ToolTip="{Binding AspNetText}" />
+                                <Border Grid.Column="4" Background="LawnGreen" ToolTip="{Binding NonGetText}" />
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

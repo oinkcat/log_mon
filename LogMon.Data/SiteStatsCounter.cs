@@ -18,6 +18,7 @@ namespace LogMon.Data
 
         private const int MethodFieldMapIndex = 0;
         private const int UriStemFieldMapIndex = 1;
+        private const int StatusFieldMapIndex = 2;
 
         private readonly int[] fieldsMap;
 
@@ -38,7 +39,7 @@ namespace LogMon.Data
         public SiteStatsCounter(SiteInfo site, string iisLogsDir)
         {
             Site = site;
-            fieldsMap = new int[UriStemFieldMapIndex + 1];
+            fieldsMap = new int[StatusFieldMapIndex + 1];
             siteLogsDir = Path.Combine(iisLogsDir, $"W3SVC{site.Id}");
         }
 
@@ -118,6 +119,10 @@ namespace LogMon.Data
                     {
                         fieldsMap[UriStemFieldMapIndex] = i - 1;
                     }
+                    else if(fieldName.Equals("sc-status"))
+                    {
+                        fieldsMap[StatusFieldMapIndex] = i - 1;
+                    }
                 }
             }
         }
@@ -130,7 +135,13 @@ namespace LogMon.Data
             string extension = Path.GetExtension(requestUriStem).ToLower();
             bool isGetMethod = infoFields[fieldsMap[MethodFieldMapIndex]].Equals("GET");
 
-            if(aspNetExts.Contains(extension))
+            int status = int.Parse(infoFields[fieldsMap[StatusFieldMapIndex]]);
+
+            if(status >= 400)
+            {
+                stats.ErrorsCount++;
+            }
+            else if(aspNetExts.Contains(extension))
             {
                 stats.AspNetCount++;
             }

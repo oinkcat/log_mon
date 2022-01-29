@@ -18,6 +18,11 @@ namespace LogMon.Data
         public DateTime Date { get; set; }
 
         /// <summary>
+        /// Count of requests ended with error
+        /// </summary>
+        public int ErrorsCount { get; set; }
+
+        /// <summary>
         /// Count of GET requests for static files
         /// </summary>
         public int StaticCount { get; set; }

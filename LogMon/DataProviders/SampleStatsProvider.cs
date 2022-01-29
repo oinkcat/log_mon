@@ -13,6 +13,8 @@ namespace LogMon.DataProviders
     {
         private const int MaxRequestsCount = 1000;
 
+        private const int ErrorRate = 10;
+
         private readonly SiteInfo[] sampleData = {
             new SiteInfo { Id = 1, Name = "Sample site" },
             new SiteInfo { Id = 2, Name = "Web site" },
@@ -37,6 +39,7 @@ namespace LogMon.DataProviders
             var randomStatData = Enumerable.Range(0, dateRangeLength)
                 .Select(d => new SiteRequestStats(site, startDate.AddDays(d))
                 {
+                    ErrorsCount = rng.Next(MaxRequestsCount) / ErrorRate,
                     StaticCount = rng.Next(MaxRequestsCount),
                     ActionCount = rng.Next(MaxRequestsCount),
                     AspNetCount = rng.Next(MaxRequestsCount),
