@@ -10,10 +10,12 @@ namespace LogMon.ViewModels
     /// </summary>
     public class StatRowViewModel
     {
+        private const int ColumnsCount = 6;
+
         private readonly SiteRequestStats requestStats;
 
         /// <summary>
-        /// Statistic item's data
+        /// Stats row display date
         /// </summary>
         public DateTime Date => requestStats.Date;
 
@@ -22,17 +24,7 @@ namespace LogMon.ViewModels
         /// </summary>
         public int TotalCount => requestStats.TotalCount;
 
-        public GridLength ErrorColLength { get; private set; }
-
-        public GridLength StaticColLength { get; private set; }
-
-        public GridLength ActionColLength { get; private set; }
-
-        public GridLength AspNetColLength { get; private set; }
-
-        public GridLength NonGetColLength { get; private set; }
-
-        public GridLength BlankColLength { get; private set; }
+        public GridLength[] ColumnSizes { get; }
 
         public string ErrorText => $"Error requests: {requestStats.StaticCount}";
 
@@ -47,31 +39,35 @@ namespace LogMon.ViewModels
         public StatRowViewModel(SiteRequestStats stats, int absoluteMaxValue)
         {
             requestStats = stats;
+            ColumnSizes = new GridLength[ColumnsCount];
 
-            ComputeRates(absoluteMaxValue);
+            ComputeColumnSizes(absoluteMaxValue);
         }
 
-        private void ComputeRates(int absMax)
+        private void ComputeColumnSizes(int absMax)
         {
             double totalRequests = (TotalCount > 0) ? TotalCount : 1;
 
-            double er = Math.Round(requestStats.ErrorsCount / totalRequests, 2);
-            ErrorColLength = new GridLength(er, GridUnitType.Star);
+            int[] statsData = {
+                requestStats.ErrorsCount,
+                requestStats.StaticCount,
+                requestStats.ActionCount,
+                requestStats.AspNetCount,
+                requestStats.NonGetCount,
+                absMax
+            };
 
-            double sr = Math.Round(requestStats.StaticCount / totalRequests, 2);
-            StaticColLength = new GridLength(sr, GridUnitType.Star);
+            for(int i = 0; i < ColumnsCount; i++)
+            {
+                double colSizePart = Math.Round(statsData[i] / totalRequests, 2);
 
-            double ar = Math.Round(requestStats.ActionCount / totalRequests, 2);
-            ActionColLength = new GridLength(ar, GridUnitType.Star);
+                if(i == ColumnsCount - 1)
+                {
+                    colSizePart--;
+                }
 
-            double anr = Math.Round(requestStats.AspNetCount / totalRequests, 2);
-            AspNetColLength = new GridLength(anr, GridUnitType.Star);
-
-            double ngr = Math.Round(requestStats.NonGetCount / totalRequests, 2);
-            NonGetColLength = new GridLength(ngr, GridUnitType.Star);
-
-            double r = Math.Round(absMax / totalRequests, 2) - 1;
-            BlankColLength = new GridLength(r, GridUnitType.Star);
+                ColumnSizes[i] = new GridLength(colSizePart, GridUnitType.Star);
+            }
         }
     }
 }

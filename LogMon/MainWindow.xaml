@@ -95,12 +95,12 @@
                         <DataTemplate>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="{Binding ErrorColLength}" />
-                                    <ColumnDefinition Width="{Binding StaticColLength}" />
-                                    <ColumnDefinition Width="{Binding ActionColLength}" />
-                                    <ColumnDefinition Width="{Binding AspNetColLength}" />
-                                    <ColumnDefinition Width="{Binding NonGetColLength}" />
-                                    <ColumnDefinition Width="{Binding BlankColLength}" />
+                                    <ColumnDefinition Width="{Binding ColumnSizes[0]}" />
+                                    <ColumnDefinition Width="{Binding ColumnSizes[1]}" />
+                                    <ColumnDefinition Width="{Binding ColumnSizes[2]}" />
+                                    <ColumnDefinition Width="{Binding ColumnSizes[3]}" />
+                                    <ColumnDefinition Width="{Binding ColumnSizes[4]}" />
+                                    <ColumnDefinition Width="{Binding ColumnSizes[5]}" />
                                 </Grid.ColumnDefinitions>
 
                                 <Border Grid.Column="0" Background="OrangeRed" ToolTip="{Binding ErrorText}" />
