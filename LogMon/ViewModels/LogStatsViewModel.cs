@@ -1,4 +1,6 @@
-﻿using System;
+﻿//#define TEST_DATA
+
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -108,9 +110,13 @@ namespace LogMon.ViewModels
 
         private async Task LoadStatistics(DateTime start, DateTime end)
         {
+#if TEST_DATA
+            var statsProvider = new SampleStatsProvider();
+#else
             var statsProvider = (UIHelpers == null)
                 ? new SampleStatsProvider() as IStatsProvider
                 : new ServerSiteStatsProvider();
+#endif
 
             var allSites = await statsProvider.GetSites();
 

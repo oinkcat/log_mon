@@ -16,9 +16,9 @@ namespace LogMon.DataProviders
         private const int ErrorRate = 10;
 
         private readonly SiteInfo[] sampleData = {
-            new SiteInfo { Id = 1, Name = "Sample site" },
+            new SiteInfo { Id = 1, Name = "Sample site", IsStarted = true },
             new SiteInfo { Id = 2, Name = "Web site" },
-            new SiteInfo { Id = 5, Name = "Internal site" },
+            new SiteInfo { Id = 5, Name = "Internal site", IsStarted = true },
             new SiteInfo { Id = 7, Name = "Admin web app" },
         };
 
